@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Sitefinity Upgrade</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="./css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/style.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+		 var link = document.createElement( 'link' );
+		 link.rel = 'stylesheet';
+		 link.type = 'text/css';
+		 link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		 document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+        <!-- 1.	Brief History of Sitefinity - Versioning, Backwards Compatibility.
+             2.	Why should we bother upgrading?
+             3.	Upgrading using the Project Manager - what happens during an upgrade.
+             4.	Upgrading with a NuGet package.
+             5.	War Story - Migrating a Sitefinity website from 3.7 to 9 (BizFilings)
+             6.	Going Forward: Community, Roadmap, Breaking Changes, New Features
+        -->
+		<div class="reveal">
+			<div class="slides">
+				<section id="main">
+                    <h2 class="title">Making a Smooth Sitefinity Upgrade</h2>
+                    <p>Dev Guide & A War Story</p>
+                </section>
+                <section id="speaker-and-company-info">
+                    <section id="speaker-info" data-background="./img/telerik-bg.jpg">
+                        <div class="speaker-img-container">
+                            <img src="./img/speaker.jpg" width="200" />
+                        </div>
+		                <table class="speaker-contact-info">
+			                <tbody>
+			                    <tr>
+				                    <td><img class="no-border" src="./img/email.png" width="50"></td>
+				                    <td style="vertical-align:middle"> <a href="mailto:denis@newventuresoftware.com?Subject=Hello" target="_blank">denis@newventuresoftware.com</a></td>
+			                    </tr>
+			                    <tr>
+				                    <td><img class="no-border" src="./img/github.png" width="50"></td>
+				                    <td style="vertical-align:middle"> <a href="https://github.com/deniskyashif" target="_blank">github.com/deniskyashif</a></td>
+			                    </tr>
+                                <tr>
+				                    <td><img class="no-border" src="./img/twitter.png" width="50"></td>
+				                    <td style="vertical-align:middle"><a href="https://twitter.com/deniskyashif" target="_blank">@deniskyashif</a></td>
+			                    </tr>
+			                </tbody>
+		                </table>
+		            </section>
+                    <section id="certifications">
+		                <div>
+			                <img width="300" class="no-border bg-transparent" src="./img/medallion_sitefitiny-certified---300-dpi.png" />
+			                <img width="350" class="no-border bg-transparent" src="./img/KendoUI_Badge_Square_Certified_Big.png" />
+		                </div>
+		            </section>
+                    <section data-background="./img/Training-intro-slide.jpg" data-background-size="contain" data-background-color="#fff">
+                        <aside class="notes">
+                            <h2>New Venture Software</h2>
+                            <p>
+                                A premium consulting and professional services partner for Progress Telerik products and technologies, who’s been instrumental in building the award-winning DevCraft suite.
+                            </p>
+                        </aside>
+                    </section>
+                    <section data-background="./img/Training-intro-slide+bullets.jpg" data-background-size="contain" data-background-color="#fff">
+                        <aside class="notes">
+                            <ol>
+                                <li>
+                                    The exceptional quality of our consulting and professional services stems from a solid background and expertise in Telerik DevCraft:
+                                    Most of us are ex-Progress Telerik software architects who have led a number of teams building the Telerik DevCraft suite.
+                                </li>
+                                <li>
+                                    We support all progress Telerik products and technologies be it for the web, desktop or mobile.
+                                </li>
+                                <li>
+                                    Successful track record of delivering future-proof software consulting and development solutions.
+                                </li>
+                                <li>
+                                    My teammates and I feel honoured and excited to have the opportunity to share our experience and passion about the Telerik technologies.
+                                </li>
+                            </ol>
+                        </aside>
+                    </section>
+                </section>
+                <section id="icebreaker">
+                    <section>
+                        <img src="./img/stage-fright.jpg" class="no-border" />
+                    </section> 
+                    <section>
+                        <h4>Breaking the Ice</h4>
+                        <img src="./img/breaking-the-ice.jpg" width="525" class="no-border " />
+                    </section>
+                </section>
+                <section id="agenda" class="color-white" data-background-image="./img/school-board.jpg">
+                    <h3>Agenda</h3>
+                    <ul>
+                        <li class="fragment">Why bother upgrading?</li>
+                        <li class="fragment">Upgrade using the Project Manager</li>
+                        <li class="fragment">NuGet Packages</li>
+                        <li class="fragment">War Story - 3.7 to 9.1</li>
+                        <li class="fragment">Going Forward</li>
+                    </ul>
+                </section>
+                <!-- What is Sitefinity -->
+		        <section id="sitefinity-cms">
+		            <h2>Sitefinity</h2>
+		            <ul style="font-size: 0.8em">
+			            <li class="fragment" data-fragment-index="1">Web Content Management System</li>
+			            <li class="fragment" data-fragment-index="2">Based on the .NET Platform</li>
+			            <li class="fragment" data-fragment-index="3">ASP.NET WebForms and MVC support</li>
+			            <li class="fragment" data-fragment-index="4">Responsive Web Design</li>
+			            <li class="fragment" data-fragment-index="5">Online Marketing and E-Commence modules</li>
+			            <li class="fragment" data-fragment-index="6">Fully Customizable</li>
+			            <li class="fragment" data-fragment-index="7">Successful (powers over 11 000 commercial sites)</li>
+		            </ul>
+		        </section>
+                <section id="questions">
+                    <h3>Questions?</h3>
+                    <img class="" src="./img/cats-staring.jpg" width="500" />
+                </section>
+                <section id="end">
+		            <h2>Thank You!</h2>
+		            <table>
+			            <tbody>
+                            <tr>
+				                <td><img class="no-border" src="./img/email.png" style="width:70px"></td>
+				                <td style="vertical-align:middle"> <a href="mailto:denis@newventuresoftware.com?Subject=Hello" target="_blank">denis@newventuresoftware.com</a></td>
+			                </tr>
+			                <tr>
+				                <td><img class="no-border" src="./img/github.png" width="70"></td>
+				                <td style="vertical-align:middle"> <a href="https://github.com/deniskyashif" target="_blank">github.com/deniskyashif</a></td>
+			                </tr>
+                            <tr>
+				                <td><img class="no-border" src="./img/twitter.png" width="70"></td>
+				                <td style="vertical-align:middle"><a href="https://twitter.com/deniskyashif" target="_blank">@deniskyashif</a></td>
+			                </tr>
+			            </tbody>
+		            </table>
+		        </section>
+			</div>
+            <section class="reveal-shared">
+		        <div class="nvs-logo-container">
+		            <a href="http://www.newventuresoftware.com/" target="_blank">
+			            <img class="no-border bg-transparent" src="./img/nvs-logo.svg" width="150" />
+                    </a>
+		        </div>
+                <div class="nvs-website-bar"><span class="nvs-website-text brackets">www.newventuresoftware.com</span></div>
+	        </section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+		 // More info about config & dependencies:
+		 // - https://github.com/hakimel/reveal.js#configuration
+		 // - https://github.com/hakimel/reveal.js#dependencies
+		 Reveal.initialize({
+             history: true,
+             progress: true,
+             touch: true,
+			 dependencies: [
+				 { src: 'plugin/markdown/marked.js' },
+				 { src: 'plugin/markdown/markdown.js' },
+				 { src: 'plugin/notes/notes.js', async: true },
+				 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			 ],
+             slideNumber: 'c/t'
+		 });
+		</script>
+	</body>
+</html>
