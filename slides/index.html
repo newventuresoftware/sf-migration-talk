@@ -35,6 +35,13 @@
 				<section id="main">
                     <h2 class="title">Making a Smooth Sitefinity Upgrade</h2>
                     <p><em>Dev Guide & A War Story</em></p>
+                    <aside class="notes">
+                        <ul>
+                            <li>How do you use Sitefinity?</li>
+                            <li>What do you use it for?</li>
+                            <li>For how long have you been using it?</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section id="speaker-and-company-info">
                     <section id="speaker-info" data-background="./img/telerik-bg.jpg">
@@ -64,16 +71,11 @@
 			                <img width="350" class="no-border bg-transparent" src="./img/KendoUI_Badge_Square_Certified_Big.png" />
 		                </div>
 		            </section>
-                    <section data-background="./img/Training-intro-slide.jpg" data-background-size="contain" data-background-color="#fff">
+                    <section data-background="./img/Training-intro-slide+bullets.jpg" data-background-size="contain" data-background-color="#fff">
                         <aside class="notes">
-                            <h2>New Venture Software</h2>
                             <p>
                                 A premium consulting and professional services partner for Progress Telerik products and technologies, who’s been instrumental in building the award-winning DevCraft suite.
                             </p>
-                        </aside>
-                    </section>
-                    <section data-background="./img/Training-intro-slide+bullets.jpg" data-background-size="contain" data-background-color="#fff">
-                        <aside class="notes">
                             <ol>
                                 <li>
                                     The exceptional quality of our consulting and professional services stems from a solid background and expertise in Telerik DevCraft:
@@ -107,8 +109,8 @@
                         <li class="fragment">Why bother upgrading?</li>
                         <li class="fragment">Upgrade using the Project Manager</li>
                         <li class="fragment">Migrating to NuGet Packages</li>
-                        <li class="fragment">War Story - 3.7 to 9.1</li>
-                        <li class="fragment">Going Forward</li>
+                        <li class="fragment">War Story - 3.7 to 9.1 Migration</li>
+                        <li class="fragment">Q&A</li>
                     </ul>
                 </section>
                 <!-- What is Sitefinity - Brief History of the CMS -->
@@ -154,7 +156,7 @@
                         <img class="no-border" src="./img/bugs-turtle.jpg" />
                     </section>
                     <section>
-                        <ul style="font-size: 0.8em">
+                        <ul style="font-size: 0.9em">
                             <li>53% of users abandon sites that take longer than 3 seconds to load</li>
                             <li class="fragment">22% will never return to the slow site</li>
                             <li class="fragment">Page load time is factored into search engine results</li>
@@ -169,12 +171,16 @@
                 <section>
                     <section>
                         <h3>Sitefinity Project Manager</h3>
+                        <img alt="" src="./img/sitefinity-project-manager.jpg" />
                     </section>
                 </section>
                 <!-- Migrating to NuGet Packages -->
                 <section>
                     <section>
                         <h3>Migrating to NuGet</h3>
+                        <div>
+                            <img class="no-border" width="200" src="https://secure.gravatar.com/avatar/60929cf718b4dd6de66be7739322ab48?s=512&r=g&d=retro"/>
+                        </div>
                         <a href="https://www.newventuresoftware.com/blog/migrate-sitefinity-assembly-references-from-bin-to-nuget-packages" target="_blank">
                             Blog Post
                         </a>
@@ -184,15 +190,27 @@
                 <section>
                     <section>
                         <h3>War Story</h3>
-                        <p style="font-size: 0.8em">
-                            <em>Migrating a Project from 3.7 to 9.0</em>
-                        </p>
                         <div>
-                            <img src="./img/forrest-gump.jpg" width="400" />
+                            <img src="./img/forrest-gump.jpg" width="400" class="no-border" />
+                        </div>
+                        <div style="font-size: 0.8em">
+                            <em>Migrating Sitefinity from 3.7 to 9.0</em>
                         </div>
                     </section>
                     <section>
-                        
+                        <h3>The Problem</h3>
+                        <ul>
+                            <li class="fragment">10+ year old website</li>
+                            <li class="fragment">Over 3000 pages</li>
+                            <li class="fragment">Unusable on mobile devices</li>
+                            <li class="fragment">Huge codebase</li>
+                            <li class="fragment">No unit tests & documentation</li>
+                            <li class="fragment">Needs to be merged with another 3.7 website with similar proportions</li>
+                            <li class="fragment">Needs to be upgraded to the latest version</li>
+                        </ul>
+                    </section>
+                    <section data-background="black">
+                        <img width="700" src="./img/hanks.jpg" class="no-border" />
                     </section>
                 </section>
                 <!-- Going Forward -->
